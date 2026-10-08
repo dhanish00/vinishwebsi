@@ -1,0 +1,1033 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>StayEase | Hotels & Stays</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style_2fa.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+  <div class="logo">
+    Stay<span>Ease</span>
+  </div>
+
+  <nav class="desktop-nav">
+    <a href="#hotels">Hotels</a>
+    <a href="#deals">Deals</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="header-right">
+
+    <button class="header-btn" id="currencyBtn">
+      ₹ INR
+    </button>
+
+    <button class="header-btn">
+      🌐 EN
+    </button>
+
+    <button class="login-header" id="openLogin">
+      Sign in
+    </button>
+
+    <button class="mobile-menu" id="mobileMenu">
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE NAV
+===================================================== -->
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#hotels">Hotels</a>
+  <a href="#deals">Deals</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#about">About</a>
+  <button id="mobileLogin">Sign in</button>
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-text">
+
+      <span class="hero-badge">
+        ✨ Better stays. Better prices.
+      </span>
+
+      <h1>
+        Find your perfect
+        <span>stay</span>
+      </h1>
+
+      <p>
+        Discover hotels, resorts and apartments at great prices.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH BOX -->
+
+    <div class="search-card">
+
+      <div class="search-field destination-field">
+
+        <label>📍 Destination</label>
+
+        <input
+          type="text"
+          id="destination"
+          placeholder="Where are you going?"
+          autocomplete="off"
+        >
+
+        <div class="suggestions" id="suggestions"></div>
+
+      </div>
+
+
+      <div class="search-field">
+
+        <label>📅 Check-in</label>
+
+        <input type="date" id="checkIn">
+
+      </div>
+
+
+      <div class="search-field">
+
+        <label>📅 Check-out</label>
+
+        <input type="date" id="checkOut">
+
+      </div>
+
+
+      <div class="search-field guest-field">
+
+        <label>👥 Guests & Rooms</label>
+
+        <button id="guestButton">
+          2 Adults · 1 Room
+        </button>
+
+        <div class="guest-popup" id="guestPopup">
+
+          <div class="guest-row">
+            <div>
+              <strong>Adults</strong>
+              <small>Age 13+</small>
+            </div>
+
+            <div class="counter">
+              <button data-type="adults" data-action="minus">−</button>
+              <span id="adults">2</span>
+              <button data-type="adults" data-action="plus">+</button>
+            </div>
+          </div>
+
+
+          <div class="guest-row">
+            <div>
+              <strong>Children</strong>
+              <small>Age 0–12</small>
+            </div>
+
+            <div class="counter">
+              <button data-type="children" data-action="minus">−</button>
+              <span id="children">0</span>
+              <button data-type="children" data-action="plus">+</button>
+            </div>
+          </div>
+
+
+          <div class="guest-row">
+            <div>
+              <strong>Rooms</strong>
+              <small>Number of rooms</small>
+            </div>
+
+            <div class="counter">
+              <button data-type="rooms" data-action="minus">−</button>
+              <span id="rooms">1</span>
+              <button data-type="rooms" data-action="plus">+</button>
+            </div>
+          </div>
+
+
+          <button class="done-btn" id="guestDone">
+            Done
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <button class="search-button" id="searchButton">
+        🔍 Search
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK FEATURES
+===================================================== -->
+
+<section class="quick-features">
+
+  <div>
+    <span>💰</span>
+    <div>
+      <strong>Best price</strong>
+      <small>Great deals every day</small>
+    </div>
+  </div>
+
+  <div>
+    <span>🔒</span>
+    <div>
+      <strong>Secure booking</strong>
+      <small>Your information is protected</small>
+    </div>
+  </div>
+
+  <div>
+    <span>⭐</span>
+    <div>
+      <strong>Verified stays</strong>
+      <small>Real guest reviews</small>
+    </div>
+  </div>
+
+  <div>
+    <span>💬</span>
+    <div>
+      <strong>24/7 support</strong>
+      <small>We're here to help</small>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     POPULAR DESTINATIONS
+===================================================== -->
+
+<section class="section" id="destinations">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="eyebrow">EXPLORE</span>
+      <h2>Popular destinations</h2>
+      <p>Discover places travelers love.</p>
+    </div>
+
+    <button class="outline-btn" id="viewDestinations">
+      View all
+    </button>
+
+  </div>
+
+
+  <div class="destination-grid">
+
+    <div class="destination-card" data-destination="Goa">
+      <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Goa</h3>
+        <p>2,340 properties</p>
+      </div>
+    </div>
+
+    <div class="destination-card" data-destination="Dubai">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Dubai</h3>
+        <p>1,850 properties</p>
+      </div>
+    </div>
+
+    <div class="destination-card" data-destination="Bengaluru">
+      <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Bengaluru</h3>
+        <p>1,120 properties</p>
+      </div>
+    </div>
+
+    <div class="destination-card" data-destination="Manali">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Manali</h3>
+        <p>760 properties</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     DEALS
+===================================================== -->
+
+<section class="section deals-section" id="deals">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="eyebrow">SPECIAL OFFERS</span>
+      <h2>Deals you'll love</h2>
+      <p>Save more on your next stay.</p>
+    </div>
+
+  </div>
+
+
+  <div class="deal-grid">
+
+    <div class="deal-card">
+      <div class="deal-icon">🔥</div>
+      <div>
+        <strong>Weekend deals</strong>
+        <p>Save up to 25% on selected stays.</p>
+      </div>
+      <button class="deal-btn">Explore</button>
+    </div>
+
+    <div class="deal-card">
+      <div class="deal-icon">🎁</div>
+      <div>
+        <strong>First booking</strong>
+        <p>Get ₹500 off your first reservation.</p>
+      </div>
+      <button class="deal-btn" data-promo="WELCOME500">Use deal</button>
+    </div>
+
+    <div class="deal-card">
+      <div class="deal-icon">🌴</div>
+      <div>
+        <strong>Summer escapes</strong>
+        <p>Special prices on resorts and villas.</p>
+      </div>
+      <button class="deal-btn">Explore</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOTEL SECTION
+===================================================== -->
+
+<section class="section" id="hotels">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="eyebrow">HOTELS & STAYS</span>
+
+      <h2 id="resultsTitle">
+        Recommended stays
+      </h2>
+
+      <p id="resultCount">
+        12 properties found
+      </p>
+
+    </div>
+
+
+    <div class="view-controls">
+
+      <button class="view-btn active" id="listView">
+        ☰ List
+      </button>
+
+      <button class="view-btn" id="mapView">
+        🗺️ Map
+      </button>
+
+      <select id="sortSelect">
+        <option value="recommended">Recommended</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="rating">Highest Rated</option>
+        <option value="reviews">Most Reviewed</option>
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <div class="hotel-layout">
+
+
+    <!-- FILTER SIDEBAR -->
+
+    <aside class="filter-sidebar">
+
+      <div class="filter-title">
+        <h3>Filter by</h3>
+
+        <button id="clearFilters">
+          Clear all
+        </button>
+      </div>
+
+
+      <!-- PRICE -->
+
+      <div class="filter-group">
+
+        <h4>Price per night</h4>
+
+        <label class="check-label">
+          <input type="checkbox" class="price-filter" value="2000">
+          <span>Under ₹2,000</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="price-filter" value="4000">
+          <span>Under ₹4,000</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="price-filter" value="6000">
+          <span>Under ₹6,000</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="price-filter" value="10000">
+          <span>Under ₹10,000</span>
+        </label>
+
+      </div>
+
+
+      <!-- RATING -->
+
+      <div class="filter-group">
+
+        <h4>Guest rating</h4>
+
+        <label class="check-label">
+          <input type="checkbox" class="rating-filter" value="4.8">
+          <span>⭐ 4.8 & above</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="rating-filter" value="4.5">
+          <span>⭐ 4.5 & above</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="rating-filter" value="4">
+          <span>⭐ 4.0 & above</span>
+        </label>
+
+      </div>
+
+
+      <!-- PROPERTY -->
+
+      <div class="filter-group">
+
+        <h4>Property type</h4>
+
+        <label class="check-label">
+          <input type="checkbox" class="type-filter" value="Hotel">
+          <span>Hotels</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="type-filter" value="Resort">
+          <span>Resorts</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="type-filter" value="Apartment">
+          <span>Apartments</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="type-filter" value="Villa">
+          <span>Villas</span>
+        </label>
+
+      </div>
+
+
+      <!-- AMENITIES -->
+
+      <div class="filter-group">
+
+        <h4>Amenities</h4>
+
+        <label class="check-label">
+          <input type="checkbox" class="amenity-filter" value="Pool">
+          <span>🏊 Swimming pool</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="amenity-filter" value="WiFi">
+          <span>📶 Free WiFi</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="amenity-filter" value="Parking">
+          <span>🚗 Free parking</span>
+        </label>
+
+        <label class="check-label">
+          <input type="checkbox" class="amenity-filter" value="Breakfast">
+          <span>🍳 Breakfast</span>
+        </label>
+
+      </div>
+
+
+      <!-- STAR -->
+
+      <div class="filter-group">
+
+        <h4>Hotel stars</h4>
+
+        <div class="star-buttons">
+
+          <button data-stars="5">★★★★★</button>
+          <button data-stars="4">★★★★</button>
+          <button data-stars="3">★★★</button>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- HOTEL RESULTS -->
+
+    <div class="results-container">
+
+      <div class="active-filters" id="activeFilters"></div>
+
+      <div id="hotelList" class="hotel-list"></div>
+
+      <div id="mapContainer" class="map-container">
+
+        <div class="fake-map">
+
+          <div class="map-title">
+            🗺️ Map view
+          </div>
+
+          <div class="map-road road-1"></div>
+          <div class="map-road road-2"></div>
+          <div class="map-road road-3"></div>
+
+          <div class="map-pin pin-1">₹4,500</div>
+          <div class="map-pin pin-2">₹3,200</div>
+          <div class="map-pin pin-3">₹5,800</div>
+          <div class="map-pin pin-4">₹2,800</div>
+          <div class="map-pin pin-5">₹6,900</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="newsletter">
+
+  <div>
+
+    <span class="eyebrow">
+      STAY IN THE LOOP
+    </span>
+
+    <h2>
+      Get exclusive hotel deals
+    </h2>
+
+    <p>
+      Subscribe and receive special offers directly in your inbox.
+    </p>
+
+  </div>
+
+
+  <form id="newsletterForm">
+
+    <input
+      type="email"
+      id="newsletterEmail"
+      placeholder="Your email address"
+      required
+    >
+
+    <button>
+      Subscribe
+    </button>
+
+  </form>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="about">
+
+  <div class="footer-grid">
+
+    <div>
+
+      <div class="footer-logo">
+        Stay<span>Ease</span>
+      </div>
+
+      <p>
+        Making travel easier, one stay at a time.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Explore</h4>
+
+      <a href="#hotels">Hotels</a>
+      <a href="#deals">Deals</a>
+      <a href="#destinations">Destinations</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>Support</h4>
+
+      <a href="#">Help Center</a>
+      <a href="#">Contact us</a>
+      <a href="#">Cancellation</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>Follow us</h4>
+
+      <div class="socials">
+        <button>f</button>
+        <button>𝕏</button>
+        <button>◎</button>
+        <button>in</button>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2026 StayEase. All rights reserved.
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     HOTEL DETAILS MODAL
+===================================================== -->
+
+<div class="modal" id="hotelModal">
+
+  <div class="modal-large">
+
+    <button class="modal-close" data-close="hotelModal">
+      ×
+    </button>
+
+    <img id="modalImage" class="modal-image">
+
+    <div class="modal-body">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="modal-badge">
+            Guest favourite
+          </span>
+
+          <h2 id="modalHotelName">
+            Hotel
+          </h2>
+
+          <p id="modalLocation">
+            Location
+          </p>
+
+          <div id="modalRating"></div>
+
+        </div>
+
+        <div class="modal-price">
+          <small>From</small>
+          <strong id="modalPrice">
+            ₹0
+          </strong>
+          <span>per night</span>
+        </div>
+
+      </div>
+
+
+      <div class="amenity-list" id="modalAmenities"></div>
+
+
+      <div class="reviews">
+
+        <h3>Guest reviews</h3>
+
+        <div class="review-score">
+
+          <strong id="modalScore">
+            4.8
+          </strong>
+
+          <div>
+            <div>Excellent</div>
+            <small id="modalReviews">
+              420 reviews
+            </small>
+          </div>
+
+        </div>
+
+
+        <div class="review-item">
+          <strong>Rahul</strong>
+          <span>★★★★★</span>
+          <p>
+            Great location and very comfortable rooms.
+          </p>
+        </div>
+
+        <div class="review-item">
+          <strong>Priya</strong>
+          <span>★★★★★</span>
+          <p>
+            Excellent service. Would definitely stay again.
+          </p>
+        </div>
+
+      </div>
+
+
+      <button class="primary-large" id="modalBookButton">
+        Reserve this stay
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div class="modal" id="loginModal">
+
+  <div class="modal-box">
+
+    <button class="modal-close" data-close="loginModal">
+      ×
+    </button>
+
+    <div class="login-logo">
+      Stay<span>Ease</span>
+    </div>
+
+    <h2>Welcome back</h2>
+
+    <p>
+      Sign in to manage your bookings and wishlist.
+    </p>
+
+
+    <button class="google-login">
+      <span>G</span>
+      Continue with Google
+    </button>
+
+
+    <div class="divider">
+      <span>or</span>
+    </div>
+
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Enter your email"
+    >
+
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Enter your password"
+    >
+
+
+    <button class="primary-large" id="loginButton">
+      Sign in
+    </button>
+
+
+    <p class="login-bottom">
+      Don't have an account?
+      <a href="#">Create account</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     BOOKING MODAL
+===================================================== -->
+
+<div class="modal" id="bookingModal">
+
+  <div class="modal-box booking-box">
+
+    <button class="modal-close" data-close="bookingModal">
+      ×
+    </button>
+
+    <span class="eyebrow">
+      RESERVATION
+    </span>
+
+    <h2>
+      Complete your booking
+    </h2>
+
+    <div class="booking-hotel">
+
+      <img id="bookingImage">
+
+      <div>
+
+        <strong id="bookingName">
+          Hotel
+        </strong>
+
+        <p id="bookingLocation">
+          Location
+        </p>
+
+        <span id="bookingRating">
+          ⭐ 4.8
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="booking-summary">
+
+      <div>
+        <span>Check-in</span>
+        <strong id="summaryCheckIn">—</strong>
+      </div>
+
+      <div>
+        <span>Check-out</span>
+        <strong id="summaryCheckOut">—</strong>
+      </div>
+
+      <div>
+        <span>Guests</span>
+        <strong id="summaryGuests">2 Adults</strong>
+      </div>
+
+    </div>
+
+
+    <label>Full name</label>
+
+    <input
+      type="text"
+      id="bookingFullName"
+      placeholder="Enter your full name"
+    >
+
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="bookingEmail"
+      placeholder="Enter your email"
+    >
+
+
+    <label>Promo code</label>
+
+    <div class="promo-row">
+
+      <input
+        type="text"
+        id="promoInput"
+        placeholder="Enter promo code"
+      >
+
+      <button id="applyPromo">
+        Apply
+      </button>
+
+    </div>
+
+    <p id="promoMessage" class="promo-message"></p>
+
+
+    <div class="total-box">
+
+      <span>Total</span>
+
+      <strong id="bookingTotal">
+        ₹0
+      </strong>
+
+    </div>
+
+
+    <button class="primary-large" id="confirmBooking">
+      Confirm booking
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     SUCCESS MODAL
+===================================================== -->
+
+<div class="modal" id="successModal">
+
+  <div class="modal-box success-box">
+
+    <div class="success-icon">
+      ✓
+    </div>
+
+    <h2>
+      Booking confirmed!
+    </h2>
+
+    <p>
+      Your StayEase reservation has been confirmed.
+    </p>
+
+    <div class="confirmation-number">
+      Confirmation:
+      <strong id="confirmationNumber">
+        SE-000000
+      </strong>
+    </div>
+
+    <button class="primary-large" data-close="successModal">
+      Done
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast" id="toast">
+  <span id="toastMessage">
+    Done
+  </span>
+</div>
+
+
+<script src="script_2fa.js"></script>
+
+</body>
+</html>
+```
